@@ -7,7 +7,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import CodingStatsSection from "@/components/CodingStatsSection";
+// import CodingStatsSection from "@/components/CodingStatsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
@@ -43,7 +43,7 @@ export default function Home() {
       <ExperienceSection />
 
       {/* Problem Solving & Algorithmic Coding Profiles (LeetCode, GitHub) */}
-      <CodingStatsSection />
+      {/* <CodingStatsSection /> */}
 
       {/* Contact Section & One-Click Copy */}
       <ContactSection />

@@ -33,7 +33,7 @@ export default function AboutSection() {
 
             <div className="p-4 rounded-xl bg-[#0e0919]/90 border border-purple-900/30 mb-5 space-y-2">
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                Because I wasn&apos;t in the CS branch, I spent my evenings and weekends self-studying computer science fundamentals—reading documentation, learning Data Structures & Algorithms, building web projects, and understanding how databases and servers work behind the scenes.
+                I spend most of my time self-studying computer science fundamentals—reading documentation, learning Data Structures & Algorithms, building web projects, and understanding how databases and servers work behind the scenes.
               </p>
             </div>
 
@@ -42,7 +42,7 @@ export default function AboutSection() {
             </p>
 
             {/* Quick Stat Highlights */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8">
               {education.highlights.map((item, idx) => (
                 <div
                   key={idx}
@@ -84,7 +84,7 @@ export default function AboutSection() {
                   <GraduationCap className="w-6 h-6" />
                 </div>
                 <span className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/10 text-[#c084fc] border border-purple-500/20">
-                  Batch of 2025
+                  Batch of 2027
                 </span>
               </div>
 

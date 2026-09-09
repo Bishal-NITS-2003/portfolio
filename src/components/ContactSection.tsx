@@ -8,14 +8,17 @@ import {
   Check, 
   Send, 
   MapPin, 
-  Code2
+  Loader2,
+  AlertCircle
 } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./BrandIcons";
+import { GithubIcon, LinkedinIcon, FacebookIcon } from "./BrandIcons";
 
 export default function ContactSection() {
   const { personal } = portfolioData;
   const [copied, setCopied] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,12 +32,34 @@ export default function ContactSection() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
+    setIsSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message. Please try again.");
+      }
+
+      setFormSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 2000);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Something went wrong. Please try again or email me directly.";
+      setErrorMessage(msg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -114,7 +139,7 @@ export default function ContactSection() {
 
               <div className="p-3 rounded-xl bg-purple-950/30 border border-purple-500/20 text-purple-300 text-xs flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#a855f7] animate-ping" />
-                <span>Available to start full-time in 2025 (open to remote or on-site).</span>
+                <span>Available to start full-time in 2027 (open to remote or on-site).</span>
               </div>
             </div>
 
@@ -141,13 +166,13 @@ export default function ContactSection() {
                   <LinkedinIcon className="w-5 h-5" />
                 </a>
                 <a
-                  href={personal.socials.leetcode}
+                  href={personal.socials.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-white/5 hover:bg-purple-900/30 border border-white/10 hover:border-purple-500/30 text-gray-300 hover:text-white transition-colors"
-                  title="LeetCode"
+                  title="Facebook"
                 >
-                  <Code2 className="w-5 h-5" />
+                  <FacebookIcon className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -182,6 +207,16 @@ export default function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {errorMessage && (
+                    <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-xs text-red-300 flex items-start gap-2.5">
+                      <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                      <div className="flex-1 leading-relaxed">
+                        <strong className="text-red-200">Unable to send: </strong>
+                        <span>{errorMessage}</span>
+                      </div>
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-semibold text-gray-300 mb-1.5">
@@ -235,17 +270,27 @@ export default function ContactSection() {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Hi David, we came across your projects and would love to invite you for an SWE technical interview..."
+                      placeholder="Hi Bishal, we came across your projects and would love to invite you for an SWE technical interview..."
                       className="w-full px-4 py-2.5 rounded-xl bg-black/40 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-[#a855f7] focus:ring-1 focus:ring-[#a855f7]/40 transition-colors resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#7c3aed] text-white font-semibold text-sm shadow-lg shadow-purple-950/50 hover:shadow-purple-700/60 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#7c3aed] text-white font-semibold text-sm shadow-lg shadow-purple-950/50 hover:shadow-purple-700/60 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>Send Message</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Sending Message...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}

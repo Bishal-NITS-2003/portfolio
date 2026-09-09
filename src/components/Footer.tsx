@@ -20,7 +20,7 @@ export default function Footer() {
               {portfolioData.personal.signature}
             </span>
             <p className="text-xs text-gray-400 mt-1 max-w-sm">
-              NIT Silchar (Mechanical Engineering) • Aspiring Software Engineer
+              NIT Silchar • Aspiring Software Engineer
             </p>
           </div>
 

@@ -54,14 +54,14 @@ export default function HeroSection() {
           {/* ================================================================== */}
           {/* LEFT COLUMN: Text, Bio, CTAs, Tech Badges */}
           {/* ================================================================== */}
-          <div className="lg:col-span-6 xl:col-span-7 flex flex-col justify-center z-20 py-8">
+          <div className="col-span-12 lg:col-span-6 xl:col-span-7 flex flex-col justify-center z-20 py-8">
             
             {/* NIT Silchar & Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-[#a855f7]/30 text-xs text-gray-300 w-fit mb-6 shadow-sm backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-[#c084fc] animate-ping" />
               <span className="font-semibold text-white">NIT Silchar</span>
               <span className="text-gray-500">•</span>
-              <span className="text-[#c084fc] font-medium">Looking for Software Engineer Roles (2025 Batch)</span>
+              <span className="text-[#c084fc] font-medium">Looking for Software Engineer Roles (2027 Batch)</span>
             </div>
 
             {/* Main Greeting / Title matching reference */}
@@ -77,14 +77,13 @@ export default function HeroSection() {
               </span>
             </h1>
 
-            {/* Simple, honest description */}
+            {/* Impactful developer description */}
             <p className="text-base sm:text-lg text-gray-300 max-w-xl font-normal leading-relaxed mb-3">
-              I am a final-year Mechanical Engineering student at <span className="text-white font-semibold">NIT Silchar</span>. Even though my branch is mechanical, I fell in love with coding and spend most of my time writing software.
+              I am an undergraduate student at <span className="text-white font-semibold">NIT Silchar</span> passionate about software engineering, building scalable web applications, and crafting seamless digital experiences.
             </p>
 
             <p className="text-xs sm:text-sm text-gray-400 max-w-lg leading-relaxed mb-8">
-              I enjoy solving DSA problems in C++, building web apps with Next.js and Go, and understanding how backend systems handle real traffic.
-            </p>
+              I enjoy solving real world problems through code, architecting full-stack applications with Next.js, React, TypeScript, and modern backend systems, and continuously pushing the limits of technology.</p>
 
             {/* CTAs: Contact Me & View Projects */}
             <div className="flex flex-wrap items-center gap-5 mb-10">
@@ -148,9 +147,9 @@ export default function HeroSection() {
 
           {/* ================================================================== */}
           {/* RIGHT COLUMN: FULL-HEIGHT NO-BOX DEVELOPER IMAGE STANDING TALL     */}
-          {/* Directly positioned above the right background. Zero box/card!     */}
+          {/* Visible on screens >= 1024px (lg:flex), hidden below 1024px        */}
           {/* ================================================================== */}
-          <div className="lg:col-span-6 xl:col-span-5 relative min-h-[520px] sm:min-h-[620px] lg:min-h-[82vh] flex items-end justify-center lg:justify-center">
+          <div className="hidden lg:flex lg:col-span-6 xl:col-span-5 relative lg:min-h-[82vh] items-end justify-center">
             
             {/* THE NO-BACKGROUND IMAGE (Standing tall, extending full height of hero section) */}
             <div className="relative w-full h-full flex items-end justify-center">

@@ -61,8 +61,8 @@ export const portfolioData = {
     name: "Bishal Das", // Put your name here (e.g., Bishal or Rahul)
     signature: "@bishalnits27", // Signature in the top navbar
     title: "Final Year Student at NIT Silchar | Aspiring Software Engineer",
-    roleHighlight: "NIT Silchar • Mechanical to Software",
-    subheading: "I am a final-year Mechanical Engineering student at NIT Silchar. Even though my branch is mechanical, coding is what I truly enjoy doing every day. I love building backend systems, solving DSA problems, and creating useful web apps.",
+    roleHighlight: "NIT Silchar • Aspiring Software Engineer",
+    subheading: "I am an undergraduate student at NIT Silchar passionate about software development. I love building backend systems, solving DSA problems, and creating fast, scalable web applications.",
     bio: "I taught myself computer science fundamentals alongside my college coursework. I spend most of my free time writing code, building personal projects, and preparing for full-time Software Engineer (SDE) roles.",
     status: "Looking for full-time Software Engineer Roles (2027 batch)",
     location: "NIT Silchar, Assam • Ready to relocate anywhere",
@@ -162,7 +162,7 @@ export const portfolioData = {
       category: "Full Stack Web Application",
       technologies: "Next.js, TypeScript, Tailwind CSS, Express.js, Prisma ORM, MongoDB",
       description: "Built the official website for E-Cell NIT Silchar, the central hub for all entrepreneurship activities on campus. The platform features event management, startup showcases, and member dashboards.",
-      gifUrl: "",
+      gifUrl: "/projects/ecell.gif",
       image: "/images/project-distributed.jpg",
       tags: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "Prisma ORM", "MongoDB"],
       metrics: [
@@ -228,7 +228,7 @@ export const portfolioData = {
       category: "",
       technologies: "Next.js, TypeScript, MongoDB, WebRTC, MediaRecorder API, OpenAI API",
       description: "A mental wellness monitoring platform that helps users track their mood and identify potential risks using AI-powered voice analysis. Users can record voice notes, and the system analyzes sentiment, tone, and keywords to provide insights and suggest coping strategies.",
-      gifUrl: "projects/prb.png",
+      gifUrl: "/projects/prb.png",
       tags: ["Next.js", "TypeScript", "MongoDB", "WebRTC", "MediaRecorder API", "OpenAI API"],
       metrics: [
         "Analyzes voice recordings using OpenAI API to detect emotional patterns",
@@ -242,9 +242,27 @@ export const portfolioData = {
       ],
       featured: false
     },
-    
     {
-      id: "NoScalp",
+      id: "project-5",
+      title: "Incandescence 2025 - Website",
+      tagline: "The Official Website for the largest socio-cultural festival of NIT Silchar",
+      category: "",
+      technologies: "Next.js, TypeScript, TailwindCSS, MongoDB",
+      description: "The official website for Incandescence 2025, the largest socio-cultural festival of NIT Silchar. The website features event management, team showcases, and a modern, responsive design with smooth animations and intuitive navigation.",
+      gifUrl: "/projects/incand.gif",
+      tags: ["Next.js", "TypeScript", "TailwindCSS", "MongoDB"],
+      metrics: [
+        ""
+      ],
+      githubUrl: "https://github.com/Bishal-NITS-2003/incand-2025",
+      liveUrl: "https://incand-2025-kappa.vercel.app",
+      architectureNotes: [
+        ""
+      ],
+      featured: false
+    },
+    {
+      id: "project-6",
       title: "NoScalp",
       tagline: "Event Ticketing decentralized web app",
       category: "Blockchain & Web3",
@@ -267,45 +285,29 @@ export const portfolioData = {
   experience: [
     {
       id: "exp-1",
-      role: "Software Engineering Intern",
-      company: "TechScale Solutions",
-      location: "Remote",
-      period: "May 2024 — Aug 2024",
-      type: "Internship",
+      role: "Technical Head",
+      company: "ECELL - NIT Silchar",
+      location: "NIT Silchar",
+      period: "July 2025 — June 2026",
+      type: "College Club",
       description: [
-        "Worked with the backend team to build and maintain REST APIs using Go and Node.js.",
-        "Made slow database queries faster by adding Redis caching and setting up proper database indexes.",
-        "Wrote unit tests and helped set up automated testing in GitHub Actions before code gets merged."
+        "Led and mentored the technical team, overseeing project planning, development, and deployment processes.",
+        "Led the development of the ECELL-NIT Silchar's website with a new and improved UI/UX.",
       ],
-      techStack: ["Go", "PostgreSQL", "Redis", "Docker", "Git"]
+      techStack: ["React", "Typescript", "Next.js", "Express", "Git", "MongoDB"]
     },
     {
       id: "exp-2",
-      role: "Open Source Contributor",
-      company: "Open Source Projects",
-      location: "Remote",
-      period: "Jan 2024 — Apr 2024",
-      type: "Open Source",
+      role: "Web Head",
+      company: "Incandescence - NIT Silchar",
+      location: "NIT Silchar",
+      period: "Dec 2025 — Feb 2026",
+      type: "College Festival",
       description: [
-        "Contributed bug fixes and documentation improvements to open source TypeScript and C++ projects on GitHub.",
-        "Learned how to read large unfamiliar codebases, follow existing coding styles, and work with maintainers through pull requests.",
-        "Added unit tests to improve code coverage and catch edge case bugs."
+        "Led and mentored the technical team, overseeing project planning, development, and deployment processes.",
+        "Led the development of the Incandescence 2026 website with a new and improved UI/UX.",
       ],
-      techStack: ["TypeScript", "C++", "Jest", "Git", "GitHub"]
-    },
-    {
-      id: "exp-3",
-      role: "Coding Club Lead & Mentor",
-      company: "Coding Club, NIT Silchar",
-      location: "NIT Silchar Campus",
-      period: "Aug 2023 — Present",
-      type: "College Club",
-      description: [
-        "Helped first and second-year college students get started with basic programming and data structures in C++.",
-        "Helped organize intra-college coding contests and weekend hackathons on campus.",
-        "Shared resources and roadmaps for students from non-CS branches who want to learn software engineering."
-      ],
-      techStack: ["C++", "Data Structures", "Mentoring", "Git"]
+      techStack: ["Next.js", "TypeScript", "TailwindCSS", "Express" ,"Firebase"]
     }
   ] as Experience[],
 
@@ -348,56 +350,56 @@ export const portfolioData = {
   certificates: [
     {
       id: "cert-1",
-      title: "AWS Certified Solutions Architect – Associate",
-      issuer: "Amazon Web Services (AWS)",
-      issuerBadge: "AWS",
-      image: "/certificates/cert-1.jpg",
-      credentialUrl: "https://aws.amazon.com/certification/",
+      title: "Crash Course on Python",
+      issuer: "Google",
+      issuerBadge: "Google",
+      image: "/certificates/python.png",
+      credentialUrl: "https://coursera.org/share/edaa7a98ffd4909bb068397f7304664c",
       accentColor: "#FF9900"
     },
     {
       id: "cert-2",
-      title: "Meta Front-End Developer Professional Certificate",
-      issuer: "Meta",
-      issuerBadge: "META",
-      image: "/certificates/cert-2.jpg",
-      credentialUrl: "https://www.coursera.org",
+      title: "The Complete 2024 Web Development Bootcamp",
+      issuer: "Udemy",
+      issuerBadge: "Udemy",
+      image: "/certificates/development.png",
+      credentialUrl: "https://www.udemy.com/certificate/UC-3db29f71-aa4e-4457-b00e-6e12e845b2fd",
       accentColor: "#0081FB"
     },
     {
       id: "cert-3",
-      title: "Deep Learning Specialization",
-      issuer: "DeepLearning.AI & Stanford Online",
-      issuerBadge: "AI",
-      image: "/certificates/cert-3.jpg",
-      credentialUrl: "https://deeplearning.ai",
+      title: "Introduction to Git and Github",
+      issuer: "Google",
+      issuerBadge: "Google",
+      image: "/certificates/git.png",
+      credentialUrl: "https://www.coursera.org/account/accomplishments/verify/CG510CCODNO6",
       accentColor: "#C084FC"
     },
     {
       id: "cert-4",
-      title: "Data Structures & Algorithms in C++",
-      issuer: "Coding Ninjas",
-      issuerBadge: "DSA",
-      image: "/certificates/cert-4.jpg",
-      credentialUrl: "https://codingninjas.com",
+      title: "Supervised Machine Learning: Regression and Classification",
+      issuer: "Stanford Online",
+      issuerBadge: "Stanford Online",
+      image: "/certificates/supervised.png",
+      credentialUrl: "https://www.coursera.org/account/accomplishments/verify/KB5BZO2D25Z3",
       accentColor: "#10B981"
     },
     {
       id: "cert-5",
-      title: "Docker & Container Orchestration",
-      issuer: "Cloud Native Computing Foundation",
-      issuerBadge: "DOCKER",
-      image: "/certificates/cert-5.jpg",
-      credentialUrl: "https://docker.com",
+      title: "Advanced Learning Algorithms",
+      issuer: "Stanford Online",
+      issuerBadge: "Stanford Online",
+      image: "/certificates/advanced.png",
+      credentialUrl: "https://www.coursera.org/account/accomplishments/verify/XWLZQ4DPS4IV",
       accentColor: "#2496ED"
     },
     {
       id: "cert-6",
-      title: "PostgreSQL & Relational Database Design",
-      issuer: "University of Michigan",
-      issuerBadge: "SQL",
-      image: "/certificates/cert-6.jpg",
-      credentialUrl: "https://coursera.org",
+      title: "Using Python to Interact with the Operating System",
+      issuer: "Google",
+      issuerBadge: "Google",
+      image: "/certificates/operatingSystem.png",
+      credentialUrl: "https://www.coursera.org/account/accomplishments/verify/IIAHJ5076IFM",
       accentColor: "#A855F7"
     }
   ] as Certificate[]

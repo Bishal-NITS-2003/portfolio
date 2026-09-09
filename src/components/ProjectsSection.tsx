@@ -15,9 +15,6 @@ interface WorkImageProps {
 }
 
 const WorkImage: React.FC<WorkImageProps> = ({ project, index }) => {
-  const isGif = Boolean(project.gifUrl);
-  const isImage = Boolean(project.image);
-
   return (
     <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] rounded-2xl overflow-hidden border border-white/10 bg-[#0c0816] group-hover:border-[#a855f7]/50 transition-all duration-300 shadow-xl flex items-center justify-center shrink-0">
       {/* Ambient background bloom matching card theme */}
@@ -30,17 +27,17 @@ const WorkImage: React.FC<WorkImageProps> = ({ project, index }) => {
         }}
       />
 
-      {isGif ? (
+      {project.gifUrl ? (
         /* eslint-disable-next-line @next/next/no-img-element */
         <img
-          src={project.gifUrl}
+          src={project.gifUrl.startsWith("/") ? project.gifUrl : `/${project.gifUrl}`}
           alt={project.title}
           className="w-full h-full object-cover select-none"
         />
-      ) : isImage ? (
+      ) : project.image ? (
         /* eslint-disable-next-line @next/next/no-img-element */
         <img
-          src={project.image}
+          src={project.image.startsWith("/") ? project.image : `/${project.image}`}
           alt={project.title}
           className="w-full h-full object-cover select-none group-hover:scale-105 transition-transform duration-500"
         />
@@ -341,7 +338,7 @@ export default function ProjectsSection() {
                 </p>
 
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Bishal-NITS-2003?tab=repositories"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 rounded-xl bg-gradient-to-r from-[#a855f7] to-[#7c3aed] text-white font-semibold text-xs sm:text-sm shadow-lg shadow-[#a855f7]/35 hover:shadow-[#a855f7]/60 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
