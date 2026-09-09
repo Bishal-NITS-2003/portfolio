@@ -19,6 +19,7 @@ interface SkillItem {
   width: number;
   height: number;
   categories: SkillCategory[];
+  bgWhite?: boolean;
 }
 
 // Tier 1: 9 unique skills (Core Languages & Web Fundamentals)
@@ -45,25 +46,25 @@ export const TIER_2_SKILLS: SkillItem[] = [
   { skill_name: "Figma", image: "figma.png", width: 50, height: 50, categories: ["frontend"] },
 ];
 
-// Tier 3: 5 unique skills (Backend & APIs)
+// Tier 3: 5 unique skills (Databases & DevOps)
 export const TIER_3_SKILLS: SkillItem[] = [
-  { skill_name: "Node.js", image: "node.png", width: 80, height: 80, categories: ["backend", "fullstack"] },
-  { skill_name: "Express.js", image: "express.png", width: 80, height: 80, categories: ["backend"] },
-  { skill_name: "GraphQL", image: "graphql.png", width: 80, height: 80, categories: ["backend", "frontend"] },
-  { skill_name: "Prisma ORM", image: "prisma.png", width: 70, height: 70, categories: ["backend"] },
-  { skill_name: "Stripe", image: "stripe.png", width: 80, height: 80, categories: ["backend", "fullstack"] },
-];
-
-// Tier 4: 3 unique skills (Databases & DevOps)
-export const TIER_4_SKILLS: SkillItem[] = [
   { skill_name: "PostgreSQL", image: "postgresql.png", width: 70, height: 70, categories: ["backend", "fullstack"] },
   { skill_name: "MongoDB", image: "mongodb.png", width: 45, height: 45, categories: ["backend", "fullstack"] },
-  { skill_name: "Docker", image: "docker.png", width: 70, height: 70, categories: ["fullstack", "backend"] },
+  { skill_name: "Firebase", image: "firebase.png", width: 70, height: 70, categories: ["fullstack", "backend"] },
+  { skill_name: "GitHub", image: "github.png", width: 70, height: 70, categories: ["fullstack"], bgWhite: true },
+  { skill_name: "Git", image: "git.webp", width: 70, height: 70, categories: ["fullstack"] },
+];
+
+// Tier 4: 3 unique skills (Backend & APIs)
+export const TIER_4_SKILLS: SkillItem[] = [
+  { skill_name: "Node.js", image: "node.png", width: 80, height: 80, categories: ["backend", "fullstack"] },
+  { skill_name: "Express.js", image: "express.png", width: 80, height: 80, categories: ["backend"] },
+  { skill_name: "Prisma ORM", image: "prisma.png", width: 70, height: 70, categories: ["backend"] },
 ];
 
 // Tier 5: 1 unique skill (High-Performance Backend / Systems)
 export const TIER_5_SKILLS: SkillItem[] = [
-  { skill_name: "Go (Golang)", image: "go.png", width: 60, height: 60, categories: ["backend", "languages"] },
+  { skill_name: "VS Code", image: "vs.png", width: 60, height: 60, categories: ["languages"] },
 ];
 
 export default function SkillsSection() {
@@ -157,6 +158,7 @@ export default function SkillsSection() {
                 height={image.height}
                 index={index}
                 dimmed={isDimmed(image)}
+                bgWhite={image.bgWhite}
               />
             ))}
           </div>
@@ -172,6 +174,7 @@ export default function SkillsSection() {
                 height={image.height}
                 index={index + 9}
                 dimmed={isDimmed(image)}
+                bgWhite={image.bgWhite}
               />
             ))}
           </div>
@@ -187,6 +190,7 @@ export default function SkillsSection() {
                 height={image.height}
                 index={index + 16}
                 dimmed={isDimmed(image)}
+                bgWhite={image.bgWhite}
               />
             ))}
           </div>
@@ -202,6 +206,7 @@ export default function SkillsSection() {
                 height={image.height}
                 index={index + 21}
                 dimmed={isDimmed(image)}
+                bgWhite={image.bgWhite}
               />
             ))}
           </div>
@@ -217,6 +222,7 @@ export default function SkillsSection() {
                 height={image.height}
                 index={index + 24}
                 dimmed={isDimmed(image)}
+                bgWhite={image.bgWhite}
               />
             ))}
           </div>

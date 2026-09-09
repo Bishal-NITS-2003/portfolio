@@ -10,6 +10,7 @@ type SkillDataProviderProps = {
   height: number;
   index: number;
   dimmed?: boolean;
+  bgWhite?: boolean;
 };
 
 export const SkillDataProvider = ({
@@ -19,10 +20,13 @@ export const SkillDataProvider = ({
   height,
   index,
   dimmed = false,
+  bgWhite = false,
 }: SkillDataProviderProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
+
+  const isWhiteBg = bgWhite || name.toLowerCase() === "github" || src.toLowerCase().includes("github");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,7 +65,9 @@ export const SkillDataProvider = ({
           width={width}
           height={height}
           alt={name}
-          className="object-contain select-none w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14"
+          className={`object-contain select-none w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 ${
+            isWhiteBg ? "bg-white rounded-lg sm:rounded-xl p-1 sm:p-1.5 shadow-sm shadow-white/20" : ""
+          }`}
         />
       </div>
 

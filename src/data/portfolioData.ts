@@ -157,118 +157,108 @@ export const portfolioData = {
   projects: [
     {
       id: "project-1",
-      title: "PulseStream",
-      tagline: "A real-time pub-sub message broker built with Go",
-      category: "Distributed Systems / Go",
-      technologies: "Go, Redis, Docker, WebSockets, Concurrency",
-      description: "I built this project to understand how message systems like Apache Kafka work under the hood. It allows different services to publish and subscribe to topics with disk persistence, so messages are not lost if a server restarts.",
+      title: "E-Cell NIT Silchar - Official Website",
+      tagline: "The official website for the Entrepreneurship Cell of NIT Silchar, providing resources, event updates, and startup support for students.",
+      category: "Full Stack Web Application",
+      technologies: "Next.js, TypeScript, Tailwind CSS, Express.js, Prisma ORM, MongoDB",
+      description: "Built the official website for E-Cell NIT Silchar, the central hub for all entrepreneurship activities on campus. The platform features event management, startup showcases, and member dashboards.",
       gifUrl: "",
       image: "/images/project-distributed.jpg",
-      tags: ["Go", "Redis", "Docker", "WebSockets"],
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Express.js", "Prisma ORM", "MongoDB"],
       metrics: [
-        "Tested with over 10,000 messages per second on a local machine",
-        "Fast response times (under 5 milliseconds on average)",
-        "Stores logs safely to disk before acknowledging"
+        "Official platform for the Entrepreneurship Cell of NIT Silchar",
+        "Processed 50+ event registrations and 20+ startup submissions in the first semester",
+        "Modern, responsive design with smooth animations and intuitive navigation"
       ],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.example.com",
+      githubUrl: "https://github.com/Ecell-NITS/ecell-website-2026",
+      liveUrl: "https://www.ecellnits.org",
       architectureNotes: [
-        "Uses Go goroutines and channels to handle concurrent incoming connections.",
-        "Saves incoming messages to append-only log files on disk.",
-        "Includes a simple real-time web dashboard using WebSockets to monitor queue traffic."
+        "Uses Next.js App Router with server components for SEO-friendly content display",
+        "Tailwind CSS for rapid UI development and responsive design across devices",
+        "Prisma ORM for type-safe database interactions with MongoDB backend",
       ],
       featured: true
     },
     {
       id: "project-2",
-      title: "CodeCollab",
-      tagline: "An online editor where multiple people can type together in real time",
-      category: "Full Stack / WebSockets",
-      technologies: "Next.js, TypeScript, WebSockets, Docker, Monaco Editor",
-      description: "A web-based code editor similar to Google Docs, but made for programmers. Multiple users can open the same file, see each other's live cursors, and edit code at the same time without overwriting each other.",
-      gifUrl: "",
-      image: "/images/project-editor.jpg",
-      tags: ["Next.js", "TypeScript", "WebSockets", "Docker", "Tailwind CSS"],
+      title: "SentinelTraffic",
+      tagline: "Automated Traffic Violation Detection",
+      category: "",
+      technologies: "Python, FastAPI, PostgreSQL, YOLOv8, OpenCV",
+      description: "An automated traffic violation detection system that uses deep learning to identify vehicles and detect traffic rule violations. The system is built with a focus on security, transparency, and user experience.",
+      gifUrl: "/projects/sentinel.png",
+      image: "/projects/sentinel.png",
+      tags: ["Python", "FastAPI", "PostgreSQL", "YOLOv8", "OpenCV"],
       metrics: [
-        "Instant text sync between users with almost zero noticeable delay",
-        "Safe code execution sandbox using Docker containers",
-        "Includes syntax highlighting for C++, Python, and JavaScript"
+        "Detects and reports traffic violations using AI-powered computer vision",
+        "Real-time processing with low latency",
+        "Secure and transparent violation tracking"
       ],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.example.com",
+      githubUrl: "https://github.com/Bishal-NITS-2003/SentinelTraffic",
+      liveUrl: "https://sentinel-traffic.vercel.app",
       architectureNotes: [
-        "Uses conflict-free data types (CRDTs) over WebSockets so concurrent edits merge cleanly.",
-        "Runs user submitted code inside temporary, isolated Docker containers to keep the server secure.",
-        "Integrated the Monaco Editor (the same editor engine used in VS Code)."
+        ""
       ],
       featured: true
     },
     {
       id: "project-3",
-      title: "DevAudit",
-      tagline: "A tool that scans pull requests for common bugs and security issues",
-      category: "DevOps & Security / Python",
-      technologies: "Python, FastAPI, PostgreSQL, GitHub API, React, AST Analysis",
-      description: "A developer tool that connects to GitHub repositories. Whenever someone opens a pull request, it automatically inspects the code changes, spots common bugs (like SQL injection or memory leaks), and posts helpful suggestions in the PR comments.",
-      gifUrl: "",
-      tags: ["Python", "FastAPI", "PostgreSQL", "GitHub API", "React"],
+      title: "ReelReviews",
+      tagline: "Discover, Rate, and Review Movies & Series",
+      category: "",
+      technologies: "React, Javascript, TailwindCSS, Firebase, TMDB API",
+      description: "A website that allows users to discover, rate, and review movies and TV shows. Users can also create watchlists and share their reviews with friends.",
+      gifUrl: "/projects/movie.png",
+      image: "/projects/movie.png",
+      tags: ["React", "Javascript", "TailwindCSS", "Firebase", "TMDB API"],
       metrics: [
-        "Scanned and analyzed over 100 sample pull requests during testing",
-        "Flags missing input checks, hardcoded secrets, and syntax issues",
-        "Takes less than 15 seconds to finish reviewing a typical pull request"
+        ""
       ],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.example.com",
+      githubUrl: "https://github.com/Bishal-NITS-2003/movie-website",
+      liveUrl: "https://movie-website-six-liart.vercel.app/",
       architectureNotes: [
-        "Listens for GitHub webhook events whenever a new pull request is opened or updated.",
-        "Parses code into syntax trees to detect dangerous patterns before running AI checks.",
-        "Includes a clean web dashboard where developers can see their repository review history."
+        ""
       ],
       featured: true
     },
     {
       id: "project-4",
-      title: "CloudVault",
-      tagline: "A web app for securely storing and sharing your files",
-      category: "Cloud & Cryptography",
-      technologies: "TypeScript, Node.js, Web Crypto API, AWS S3, PostgreSQL, Docker",
-      description: "A simple cloud storage service where files are encrypted right inside your web browser before they are uploaded. This means even the server administrator cannot read your stored documents.",
-      gifUrl: "",
-      tags: ["TypeScript", "Node.js", "AWS S3", "PostgreSQL", "Docker"],
+      title: "PRB: Pause, Reflect, Breathe",
+      tagline: "AI-Based Mental Wellness Monitoring Platform",
+      category: "",
+      technologies: "Next.js, TypeScript, MongoDB, WebRTC, MediaRecorder API, OpenAI API",
+      description: "A mental wellness monitoring platform that helps users track their mood and identify potential risks using AI-powered voice analysis. Users can record voice notes, and the system analyzes sentiment, tone, and keywords to provide insights and suggest coping strategies.",
+      gifUrl: "projects/prb.png",
+      tags: ["Next.js", "TypeScript", "MongoDB", "WebRTC", "MediaRecorder API", "OpenAI API"],
       metrics: [
-        "Encrypts files locally with AES-256 before upload",
-        "Supports large file uploads by splitting them into small chunks",
-        "Files can be securely downloaded and decrypted anytime"
+        "Analyzes voice recordings using OpenAI API to detect emotional patterns",
+        "Provides personalized mental wellness insights and coping strategies",
+        "Tracks mood trends over time with visualizations and reporting"
       ],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.example.com",
+      githubUrl: "https://github.com/Bishal-NITS-2003/suicide-prevention-app",
+      liveUrl: "https://suicide-prevention-app.vercel.app",
       architectureNotes: [
-        "Uses the browser's Web Crypto API to generate encryption keys that never leave the user's computer.",
-        "Uploads file chunks directly to AWS S3 using secure presigned URLs.",
-        "Stores file metadata and sharing permissions in a PostgreSQL database."
+        ""
       ],
       featured: false
     },
+    
     {
-      id: "project-5",
-      title: "AlgoSphere",
-      tagline: "Visual simulation engine for graph, tree and sorting algorithms",
-      category: "Algorithms & Simulation",
-      technologies: "C++, WebAssembly, React, TypeScript, Canvas 2D, Framer Motion",
-      description: "An interactive computer science tool built to visualize complex data structures and algorithms step-by-step. Allows students to step forward and backward through recursion trees, graph traversals, and dynamic programming tables.",
-      gifUrl: "",
-      tags: ["C++", "WebAssembly", "TypeScript", "React", "Canvas API"],
+      id: "NoScalp",
+      title: "NoScalp",
+      tagline: "Event Ticketing decentralized web app",
+      category: "Blockchain & Web3",
+      technologies: "Next.js, TypeScript, Tailwind CSS, Framer Motion",
+      description: "A web-based event ticketing platform that eliminates the need for traditional ticketing agencies. It allows event organizers to create and manage events, and attendees to purchase tickets using cryptocurrency. The platform is built with a focus on security, transparency, and user experience.",
+      gifUrl: "/projects/noscalp.png",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
       metrics: [
-        "Interactive step debugger for Dijkstra, A*, and Tree balancing",
-        "Runs compiled C++ core logic via WebAssembly for fast calculation",
-        "Smooth 60 FPS hardware accelerated visual animations"
+        ""
       ],
-      githubUrl: "https://github.com",
-      liveUrl: "https://demo.example.com",
+      githubUrl: "https://github.com/Bishal-NITS-2003/noscalp",
+      liveUrl: "https://noscalp.vercel.app",
       architectureNotes: [
-        "Core graph algorithms written in modern C++ and compiled to Wasm.",
-        "State playback engine allows scrubbable forward and reverse time-travel execution.",
-        "Adaptive canvas rendering scales gracefully across mobile and 4K displays."
+        ""
       ],
       featured: true
     }
