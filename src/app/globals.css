@@ -1,26 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #05030a;
+    --foreground: #f8fafc;
+    --surface: #0e0919;
+    --surface-light: #160f26;
+    --border: rgba(168, 85, 247, 0.15);
+    --border-hover: rgba(192, 132, 252, 0.35);
+    --accent-purple: #a855f7;
+    --accent-lilac: #c084fc;
+    --accent-violet: #7c3aed;
+    --accent-coral: #a855f7;
+    --accent-magenta: #c084fc;
+    --accent-cyan: #38bdf8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05030a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1438;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b2066;
+}
+
+/* Signature Script Font style for Brand Logo */
+.font-signature {
+  font-family: 'Caveat', cursive, sans-serif;
+}
+
+.font-sans-modern {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(18, 19, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Glow Utilities */
+.glow-purple {
+  box-shadow: 0 10px 30px -8px rgba(168, 85, 247, 0.45);
+}
+
+.glow-lilac {
+  box-shadow: 0 10px 30px -8px rgba(192, 132, 252, 0.45);
+}
+
+.glow-border:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 20px -5px rgba(168, 85, 247, 0.3);
+}
+
+/* Hero Background Gradient Art */
+.hero-gradient-mesh {
+  background: radial-gradient(circle at 75% 45%, rgba(168, 85, 247, 0.35) 0%, rgba(192, 132, 252, 0.20) 30%, rgba(124, 58, 237, 0.15) 60%, transparent 80%);
+}
+
+/* Cutout Portrait Edge Gradient Blend (Luminous Violet/Lilac Rim Light) */
+.cutout-gradient-blend {
+  filter: 
+    drop-shadow(-5px -2px 14px rgba(192, 132, 252, 0.60))
+    drop-shadow(-14px 6px 32px rgba(168, 85, 247, 0.45))
+    drop-shadow(6px -2px 14px rgba(168, 85, 247, 0.60))
+    drop-shadow(14px 6px 32px rgba(124, 58, 237, 0.45))
+    drop-shadow(0 25px 50px rgba(0, 0, 0, 0.95));
+}
+
+/* Keyframe Animations */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spinSlow 16s linear infinite reverse;
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseSubtle 5s ease-in-out infinite;
 }
