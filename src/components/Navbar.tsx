@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { portfolioData } from "@/data/portfolioData";
 import { Menu, X, FileText } from "lucide-react";
-import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "./BrandIcons";
+import { GithubIcon, LinkedinIcon, FacebookIcon } from "./BrandIcons";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -55,6 +55,13 @@ export default function Navbar() {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#c084fc] to-[#a855f7] transition-all duration-200 group-hover:w-full"></span>
           </a>
           <a
+            href="#certifications"
+            className="hover:text-white transition-colors duration-200 relative group py-1"
+          >
+            Certificates
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#c084fc] to-[#a855f7] transition-all duration-200 group-hover:w-full"></span>
+          </a>
+          <a
             href="#experience"
             className="hover:text-white transition-colors duration-200 relative group py-1"
           >
@@ -98,16 +105,18 @@ export default function Navbar() {
             <LinkedinIcon className="w-4 h-4" />
           </a>
           <a
-            href={portfolioData.personal.socials.leetcode}
+            href={portfolioData.personal.socials.facebook}
             target="_blank"
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-300 hover:text-white hover:border-[#a855f7] hover:bg-[#a855f7]/10 hover:shadow-[0_0_12px_rgba(168,85,247,0.3)] transition-all duration-200"
-            title="LeetCode Profile"
+            title="Facebook"
           >
-            <LeetcodeIcon className="w-4 h-4" />
+            <FacebookIcon className="w-4 h-4" />
           </a>
           <a
             href={portfolioData.personal.resumeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-2 px-4 py-2 text-xs font-semibold text-white bg-white/10 hover:bg-[#a855f7] border border-white/20 hover:border-[#a855f7] hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] rounded-full transition-all duration-200 flex items-center gap-1.5 shadow-sm"
           >
             <FileText className="w-3.5 h-3.5" />
@@ -141,6 +150,13 @@ export default function Navbar() {
             className="text-gray-300 hover:text-white py-2"
           >
             Skills & Tech Stack
+          </a>
+          <a
+            href="#certifications"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-gray-300 hover:text-white py-2"
+          >
+            Certificates
           </a>
           <a
             href="#experience"
@@ -182,12 +198,12 @@ export default function Navbar() {
               <LinkedinIcon className="w-4 h-4" />
             </a>
             <a
-              href={portfolioData.personal.socials.leetcode}
+              href={portfolioData.personal.socials.facebook}
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-gray-300"
             >
-              <LeetcodeIcon className="w-4 h-4" />
+              <FacebookIcon className="w-4 h-4" />
             </a>
             <a
               href={portfolioData.personal.resumeUrl}

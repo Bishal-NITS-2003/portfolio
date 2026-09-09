@@ -9,6 +9,7 @@ type SkillDataProviderProps = {
   width: number;
   height: number;
   index: number;
+  dimmed?: boolean;
 };
 
 export const SkillDataProvider = ({
@@ -17,6 +18,7 @@ export const SkillDataProvider = ({
   width,
   height,
   index,
+  dimmed = false,
 }: SkillDataProviderProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -44,15 +46,16 @@ export const SkillDataProvider = ({
     <div
       ref={ref}
       style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "scale(1)" : "scale(0.8)",
-        transition: `opacity 0.35s ease ${index * 0.025}s, transform 0.35s ease ${index * 0.025}s`,
+        opacity: isVisible ? (dimmed ? 0.22 : 1) : 0,
+        transform: isVisible ? (dimmed ? "scale(0.88)" : "scale(1)") : "scale(0.8)",
+        filter: dimmed ? "grayscale(70%) blur(0.5px)" : "none",
+        transition: `opacity 0.35s ease ${index * 0.015}s, transform 0.35s ease ${index * 0.015}s, filter 0.35s ease`,
       }}
       className="relative flex items-center justify-center p-0.5 sm:p-1 md:p-1.5 group shrink-0"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative transition-all duration-200 group-hover:scale-120 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.45)] flex items-center justify-center cursor-pointer">
+      <div className="relative transition-all duration-200 group-hover:scale-120 group-hover:drop-shadow-[0_0_15px_rgba(192,132,252,0.6)] flex items-center justify-center cursor-pointer">
         <Image
           src={`/skills/${src}`}
           width={width}

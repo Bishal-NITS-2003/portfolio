@@ -107,7 +107,7 @@ export default function HeroSection() {
             {/* Tech stack badges */}
             <div className="pt-2">
               <div className="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-3 flex items-center gap-2">
-                <span>Tools & Languages I Use</span>
+                <span>I have expertise in</span>
                 <div className="h-[1px] w-12 bg-white/10" />
               </div>
 
@@ -115,14 +115,18 @@ export default function HeroSection() {
                 {portfolioData.heroTechBadges.map((badge, idx) => (
                   <div
                     key={idx}
-                    className="group relative px-3 py-2 rounded-xl bg-[#14151e]/90 border border-white/10 hover:border-white/25 hover:bg-white/10 transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm hover:-translate-y-0.5"
+                    className="group relative w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#0e0919]/90 border border-white/10 hover:border-[#c084fc]/60 hover:bg-[#a855f7]/15 hover:shadow-[0_0_15px_rgba(168,85,247,0.35)] transition-all duration-200 flex items-center justify-center p-2 cursor-pointer hover:-translate-y-1"
                     title={badge.name}
                   >
-                    <span
-                      className="w-2.5 h-2.5 rounded-full"
-                      style={{ backgroundColor: badge.color }}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={badge.icon}
+                      alt={badge.name}
+                      className="w-full h-full object-contain filter group-hover:scale-110 transition-transform duration-200"
                     />
-                    <span className="text-xs font-medium text-gray-200 group-hover:text-white">
+
+                    {/* Minimal Tooltip on Hover */}
+                    <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md bg-black/95 border border-purple-500/30 text-[10px] font-semibold text-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-30 shadow-lg">
                       {badge.name}
                     </span>
                   </div>

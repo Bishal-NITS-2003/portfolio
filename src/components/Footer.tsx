@@ -28,6 +28,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-gray-400 font-medium">
             <a href="#projects" className="hover:text-white transition-colors">Work</a>
             <a href="#skills" className="hover:text-white transition-colors">Skills</a>
+            <a href="#certifications" className="hover:text-white transition-colors">Certificates</a>
             <a href="#experience" className="hover:text-white transition-colors">Experience</a>
             <a href="#about" className="hover:text-white transition-colors">About</a>
             <a href="#contact" className="hover:text-[#c084fc] transition-colors">Contact</a>

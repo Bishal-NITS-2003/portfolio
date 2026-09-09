@@ -11,56 +11,60 @@ import {
   Code2 
 } from "lucide-react";
 
-export const SKILL_DATA = [
-  { skill_name: "HTML", image: "html.png", width: 80, height: 80 },
-  { skill_name: "CSS", image: "css.png", width: 80, height: 80 },
-  { skill_name: "JavaScript", image: "js.png", width: 65, height: 65 },
-  { skill_name: "Tailwind CSS", image: "tailwind.png", width: 80, height: 80 },
-  { skill_name: "React", image: "react.png", width: 80, height: 80 },
-  { skill_name: "Redux", image: "redux.png", width: 80, height: 80 },
-  { skill_name: "React Query", image: "reactquery.png", width: 80, height: 80 },
-  { skill_name: "TypeScript", image: "ts.png", width: 80, height: 80 },
-  { skill_name: "Next.js", image: "next.png", width: 80, height: 80 },
-  { skill_name: "Framer Motion", image: "framer.png", width: 80, height: 80 },
-  { skill_name: "Stripe", image: "stripe.png", width: 80, height: 80 },
-  { skill_name: "Node.js", image: "node.png", width: 80, height: 80 },
-  { skill_name: "MongoDB", image: "mongodb.png", width: 40, height: 40 },
-] as const;
+type SkillCategory = "frontend" | "backend" | "fullstack" | "languages";
 
-export const FRONTEND_SKILL = [
-  { skill_name: "HTML", image: "html.png", width: 80, height: 80 },
-  { skill_name: "CSS", image: "css.png", width: 80, height: 80 },
-  { skill_name: "JavaScript", image: "js.png", width: 65, height: 65 },
-  { skill_name: "Tailwind CSS", image: "tailwind.png", width: 80, height: 80 },
-  { skill_name: "Material UI", image: "mui.png", width: 80, height: 80 },
-  { skill_name: "React", image: "react.png", width: 80, height: 80 },
-  { skill_name: "Redux", image: "redux.png", width: 80, height: 80 },
-  { skill_name: "React Query", image: "reactquery.png", width: 80, height: 80 },
-  { skill_name: "TypeScript", image: "ts.png", width: 80, height: 80 },
-  { skill_name: "Next.js", image: "next.png", width: 80, height: 80 },
-] as const;
+interface SkillItem {
+  skill_name: string;
+  image: string;
+  width: number;
+  height: number;
+  categories: SkillCategory[];
+}
 
-export const BACKEND_SKILL = [
-  { skill_name: "Node.js", image: "node.png", width: 80, height: 80 },
-  { skill_name: "Express.js", image: "express.png", width: 80, height: 80 },
-  { skill_name: "MongoDB", image: "mongodb.png", width: 40, height: 40 },
-  { skill_name: "Firebase", image: "firebase.png", width: 55, height: 55 },
-  { skill_name: "PostgreSQL", image: "postgresql.png", width: 70, height: 70 },
-  { skill_name: "MySQL", image: "mysql.png", width: 70, height: 70 },
-  { skill_name: "Prisma", image: "prisma.png", width: 70, height: 70 },
-  { skill_name: "GraphQL", image: "graphql.png", width: 80, height: 80 },
-] as const;
+// Tier 1: 9 unique skills (Core Languages & Web Fundamentals)
+export const TIER_1_SKILLS: SkillItem[] = [
+  { skill_name: "HTML5", image: "html.png", width: 80, height: 80, categories: ["frontend", "languages"] },
+  { skill_name: "CSS3", image: "css.png", width: 80, height: 80, categories: ["frontend", "languages"] },
+  { skill_name: "JavaScript", image: "js.png", width: 65, height: 65, categories: ["frontend", "languages"] },
+  { skill_name: "TypeScript", image: "ts.png", width: 80, height: 80, categories: ["frontend", "languages"] },
+  { skill_name: "Python", image: "python.svg", width: 75, height: 75, categories: ["backend", "languages"] },
+  { skill_name: "C++", image: "cpp.svg", width: 75, height: 75, categories: ["languages"] },
+  { skill_name: "React", image: "react.png", width: 80, height: 80, categories: ["frontend"] },
+  { skill_name: "Next.js", image: "next.png", width: 80, height: 80, categories: ["frontend", "fullstack"] },
+  { skill_name: "Tailwind CSS", image: "tailwind.png", width: 80, height: 80, categories: ["frontend"] },
+];
 
-export const FULLSTACK_SKILL = [
-  { skill_name: "React Native", image: "reactnative.png", width: 70, height: 70 },
-  { skill_name: "Tauri", image: "tauri.png", width: 70, height: 70 },
-  { skill_name: "Docker", image: "docker.png", width: 70, height: 70 },
-  { skill_name: "Figma", image: "figma.png", width: 50, height: 50 },
-] as const;
+// Tier 2: 7 unique skills (UI Frameworks & State Management)
+export const TIER_2_SKILLS: SkillItem[] = [
+  { skill_name: "Redux", image: "redux.png", width: 80, height: 80, categories: ["frontend"] },
+  { skill_name: "React Query", image: "reactquery.png", width: 80, height: 80, categories: ["frontend"] },
+  { skill_name: "Framer Motion", image: "framer.png", width: 80, height: 80, categories: ["frontend"] },
+  { skill_name: "Material UI", image: "mui.png", width: 80, height: 80, categories: ["frontend"] },
+  { skill_name: "React Native", image: "reactnative.png", width: 70, height: 70, categories: ["frontend", "fullstack"] },
+  { skill_name: "GSAP", image: "gsap.jpg", width: 70, height: 70, categories: ["frontend"] },
+  { skill_name: "Figma", image: "figma.png", width: 50, height: 50, categories: ["frontend"] },
+];
 
-export const OTHER_SKILL = [
-  { skill_name: "Go", image: "go.png", width: 60, height: 60 },
-] as const;
+// Tier 3: 5 unique skills (Backend & APIs)
+export const TIER_3_SKILLS: SkillItem[] = [
+  { skill_name: "Node.js", image: "node.png", width: 80, height: 80, categories: ["backend", "fullstack"] },
+  { skill_name: "Express.js", image: "express.png", width: 80, height: 80, categories: ["backend"] },
+  { skill_name: "GraphQL", image: "graphql.png", width: 80, height: 80, categories: ["backend", "frontend"] },
+  { skill_name: "Prisma ORM", image: "prisma.png", width: 70, height: 70, categories: ["backend"] },
+  { skill_name: "Stripe", image: "stripe.png", width: 80, height: 80, categories: ["backend", "fullstack"] },
+];
+
+// Tier 4: 3 unique skills (Databases & DevOps)
+export const TIER_4_SKILLS: SkillItem[] = [
+  { skill_name: "PostgreSQL", image: "postgresql.png", width: 70, height: 70, categories: ["backend", "fullstack"] },
+  { skill_name: "MongoDB", image: "mongodb.png", width: 45, height: 45, categories: ["backend", "fullstack"] },
+  { skill_name: "Docker", image: "docker.png", width: 70, height: 70, categories: ["fullstack", "backend"] },
+];
+
+// Tier 5: 1 unique skill (High-Performance Backend / Systems)
+export const TIER_5_SKILLS: SkillItem[] = [
+  { skill_name: "Go (Golang)", image: "go.png", width: 60, height: 60, categories: ["backend", "languages"] },
+];
 
 export default function SkillsSection() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
@@ -72,6 +76,11 @@ export default function SkillsSection() {
     { id: "fullstack", label: "Full Stack & DevOps", icon: Layers },
     { id: "languages", label: "Languages & Tools", icon: Code2 },
   ];
+
+  const isDimmed = (item: SkillItem) => {
+    if (activeFilter === "all") return false;
+    return !item.categories.includes(activeFilter as SkillCategory);
+  };
 
   return (
     <section id="skills" className="py-24 bg-transparent relative overflow-hidden">
@@ -106,7 +115,7 @@ export default function SkillsSection() {
           </p>
         </div>
 
-        {/* Existing Filter Tabs */}
+        {/* Filter Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2.5 mb-14">
           {filterTabs.map((tab) => {
             const Icon = tab.icon;
@@ -131,111 +140,88 @@ export default function SkillsSection() {
         {/* 
           ========================================================================
           SKILLS DISPLAY - PURE INVERTED TRIANGLE (V-SHAPED PYRAMID)
-          Tier 1 (13) -> Tier 2 (10) -> Tier 3 (8) -> Tier 4 (4) -> Tier 5 (1)
+          Tier 1 (9) -> Tier 2 (7) -> Tier 3 (5) -> Tier 4 (3) -> Tier 5 (1)
+          Zero duplicates: Every single skill is 100% unique across all rows!
           ========================================================================
         */}
         <div className="flex flex-col items-center gap-5 sm:gap-6 md:gap-7 lg:gap-8 min-h-[380px] w-full max-w-6xl mx-auto py-4 overflow-x-auto sm:overflow-visible">
           
-          {/* Tier 1: Top Base (13 icons strictly on 1 line) */}
-          {(activeFilter === "all" || activeFilter === "frontend") && (
-            <div className="flex flex-row flex-nowrap justify-center items-center gap-1.5 sm:gap-2.5 md:gap-3.5 lg:gap-4.5 w-full">
-              {SKILL_DATA.map((image, index) => (
-                <SkillDataProvider
-                  key={`r1-${image.skill_name}-${index}`}
-                  src={image.image}
-                  name={image.skill_name}
-                  width={image.width}
-                  height={image.height}
-                  index={index}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Tier 2: (10 icons strictly on 1 line) */}
-          {(activeFilter === "all" || activeFilter === "frontend") && (
-            <div className="flex flex-row flex-nowrap justify-center items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5.5 w-full">
-              {FRONTEND_SKILL.map((image, index) => (
-                <SkillDataProvider
-                  key={`r2-${image.skill_name}-${index}`}
-                  src={image.image}
-                  name={image.skill_name}
-                  width={image.width}
-                  height={image.height}
-                  index={index}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Tier 3: (8 icons strictly on 1 line) */}
-          {(activeFilter === "all" || activeFilter === "backend") && (
-            <div className="flex flex-row flex-nowrap justify-center items-center gap-2.5 sm:gap-4 md:gap-5.5 lg:gap-7 w-full">
-              {BACKEND_SKILL.map((image, index) => (
-                <SkillDataProvider
-                  key={`r3-${image.skill_name}-${index}`}
-                  src={image.image}
-                  name={image.skill_name}
-                  width={image.width}
-                  height={image.height}
-                  index={index}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Tier 4: (4 icons strictly on 1 line) */}
-          {(activeFilter === "all" || activeFilter === "fullstack") && (
-            <div className="flex flex-row flex-nowrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full">
-              {FULLSTACK_SKILL.map((image, index) => (
-                <SkillDataProvider
-                  key={`r4-${image.skill_name}-${index}`}
-                  src={image.image}
-                  name={image.skill_name}
-                  width={image.width}
-                  height={image.height}
-                  index={index}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Tier 5: Bottom Tip (1 icon: Go) */}
-          {(activeFilter === "all" || activeFilter === "languages" || activeFilter === "backend") && (
-            <div className="flex flex-row flex-nowrap justify-center items-center w-full">
-              {OTHER_SKILL.map((image, index) => (
-                <SkillDataProvider
-                  key={`r5-${image.skill_name}-${index}`}
-                  src={image.image}
-                  name={image.skill_name}
-                  width={image.width}
-                  height={image.height}
-                  index={index}
-                />
-              ))}
-            </div>
-          )}
-
-        </div>
-
-        {/* Bottom banner
-        <div className="mt-16 p-6 sm:p-8 rounded-2xl bg-[#141520]/80 border border-white/10 backdrop-blur-md text-center sm:text-left flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-lg font-bold text-white mb-1">
-              Always Learning & Improving
-            </h3>
-            <p className="text-xs sm:text-sm text-gray-400 max-w-xl">
-              I am comfortable picking up new languages and tools as needed for a project. Currently exploring distributed systems, low-latency microservices, and backend performance tuning.
-            </p>
+          {/* Tier 1: Top Base (9 unique skills strictly on 1 line) */}
+          <div className="flex flex-row flex-nowrap justify-center items-center gap-2 sm:gap-3.5 md:gap-5 lg:gap-6 w-full">
+            {TIER_1_SKILLS.map((image, index) => (
+              <SkillDataProvider
+                key={`t1-${image.skill_name}`}
+                src={image.image}
+                name={image.skill_name}
+                width={image.width}
+                height={image.height}
+                index={index}
+                dimmed={isDimmed(image)}
+              />
+            ))}
           </div>
 
-          <a
-            href="#projects"
-            className="px-5 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-xs font-semibold text-white shrink-0 transition-colors"
-          >
-            Check Out My Projects
-          </a>
-        </div> */}
+          {/* Tier 2: (7 unique skills strictly on 1 line) */}
+          <div className="flex flex-row flex-nowrap justify-center items-center gap-2.5 sm:gap-4 md:gap-6 lg:gap-7.5 w-full">
+            {TIER_2_SKILLS.map((image, index) => (
+              <SkillDataProvider
+                key={`t2-${image.skill_name}`}
+                src={image.image}
+                name={image.skill_name}
+                width={image.width}
+                height={image.height}
+                index={index + 9}
+                dimmed={isDimmed(image)}
+              />
+            ))}
+          </div>
+
+          {/* Tier 3: (5 unique skills strictly on 1 line) */}
+          <div className="flex flex-row flex-nowrap justify-center items-center gap-3.5 sm:gap-5 md:gap-7 lg:gap-9 w-full">
+            {TIER_3_SKILLS.map((image, index) => (
+              <SkillDataProvider
+                key={`t3-${image.skill_name}`}
+                src={image.image}
+                name={image.skill_name}
+                width={image.width}
+                height={image.height}
+                index={index + 16}
+                dimmed={isDimmed(image)}
+              />
+            ))}
+          </div>
+
+          {/* Tier 4: (3 unique skills strictly on 1 line) */}
+          <div className="flex flex-row flex-nowrap justify-center items-center gap-5 sm:gap-7 md:gap-10 lg:gap-12 w-full">
+            {TIER_4_SKILLS.map((image, index) => (
+              <SkillDataProvider
+                key={`t4-${image.skill_name}`}
+                src={image.image}
+                name={image.skill_name}
+                width={image.width}
+                height={image.height}
+                index={index + 21}
+                dimmed={isDimmed(image)}
+              />
+            ))}
+          </div>
+
+          {/* Tier 5: Bottom Tip (1 unique skill: Go) */}
+          <div className="flex flex-row flex-nowrap justify-center items-center w-full">
+            {TIER_5_SKILLS.map((image, index) => (
+              <SkillDataProvider
+                key={`t5-${image.skill_name}`}
+                src={image.image}
+                name={image.skill_name}
+                width={image.width}
+                height={image.height}
+                index={index + 24}
+                dimmed={isDimmed(image)}
+              />
+            ))}
+          </div>
+
+        </div>
 
       </div>
     </section>

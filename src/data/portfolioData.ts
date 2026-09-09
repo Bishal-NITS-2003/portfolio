@@ -41,6 +41,21 @@ export interface CodingProfile {
   accentColor: string;
 }
 
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  issuerBadge: string;
+  image?: string;
+  issueDate?: string;
+  credentialId?: string;
+  credentialUrl?: string;
+  description?: string;
+  skills?: string[];
+  accentColor?: string;
+  level?: string;
+}
+
 export const portfolioData = {
   personal: {
     name: "Bishal Das", // Put your name here (e.g., Bishal or Rahul)
@@ -49,17 +64,17 @@ export const portfolioData = {
     roleHighlight: "NIT Silchar • Mechanical to Software",
     subheading: "I am a final-year Mechanical Engineering student at NIT Silchar. Even though my branch is mechanical, coding is what I truly enjoy doing every day. I love building backend systems, solving DSA problems, and creating useful web apps.",
     bio: "I taught myself computer science fundamentals alongside my college coursework. I spend most of my free time writing code, building personal projects, and preparing for full-time Software Engineer (SDE) roles.",
-    status: "Looking for full-time Software Engineer roles (2025/2026 batch)",
+    status: "Looking for full-time Software Engineer Roles (2027 batch)",
     location: "NIT Silchar, Assam • Ready to relocate anywhere",
-    college: "National Institute of Technology, Silchar (NIT Silchar)",
-    branch: "B.Tech in Mechanical Engineering (2021 — 2025)",
-    email: "your.email@gmail.com", // Put your email here
-    resumeUrl: "#resume", // Link to your resume PDF
+    college: "National Institute of Technology Silchar (NIT Silchar)",
+    branch: "B.Tech in Mechanical Engineering (2023 — 2027)",
+    email: "dasbishal1717@gmail.com", // Put your email here
+    resumeUrl: "https://drive.google.com/file/d/1Gjit5YEZPnwvKzY3eBBdMIi101lzxOGw/view", // Link to your resume PDF
     socials: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
+      github: "https://github.com/Bishal-NITS-2003",
+      linkedin: "https://www.linkedin.com/in/bishalnits27",
       leetcode: "https://leetcode.com",
-      twitter: "https://x.com",
+      facebook: "https://www.facebook.com/bishalnits27",
       portfolio: "#"
     },
     heroImageNoBg: "/images/hero-portrait-nobg.png",
@@ -68,8 +83,8 @@ export const portfolioData = {
   education: {
     institution: "National Institute of Technology Silchar (NIT Silchar)",
     degree: "B.Tech in Mechanical Engineering",
-    duration: "2021 — 2025 (Final Year)",
-    cgpa: "Good Academic Standing",
+    duration: "2023 — 2027 (Final Year)",
+    cgpa: "8.23/10",
     statusNote: "Institute of National Importance",
     storyHeading: "My Journey into Software",
     story: "When I joined NIT Silchar for Mechanical Engineering, I took an introductory programming class and loved it. I realized that writing code gives you the ability to build something from scratch and see it work right away. Since then, I have been teaching myself Data Structures, Algorithms, Web Development, and System Design on my own through books, documentation, and online courses.",
@@ -84,7 +99,6 @@ export const portfolioData = {
       "Engineering Mathematics"
     ],
     highlights: [
-      { label: "DSA Problems Solved", value: "650+" },
       { label: "College", value: "NIT Silchar" },
       { label: "Projects Built", value: "10+ Apps" },
       { label: "Focus", value: "Backend & Systems" }
@@ -92,32 +106,31 @@ export const portfolioData = {
   },
 
   heroTechBadges: [
-    { name: "C++", color: "#00599C", bg: "rgba(0, 89, 156, 0.15)" },
-    { name: "Python", color: "#3776AB", bg: "rgba(55, 118, 171, 0.15)" },
-    { name: "Go", color: "#00ADD8", bg: "rgba(0, 173, 216, 0.15)" },
-    { name: "React", color: "#61DAFB", bg: "rgba(97, 218, 251, 0.15)" },
-    { name: "TypeScript", color: "#3178C6", bg: "rgba(49, 120, 198, 0.15)" },
-    { name: "Node.js", color: "#68A063", bg: "rgba(104, 160, 99, 0.15)" },
-    { name: "Docker", color: "#2496ED", bg: "rgba(36, 150, 237, 0.15)" },
-    { name: "PostgreSQL", color: "#4169E1", bg: "rgba(65, 105, 225, 0.15)" }
+    { name: "Python", icon: "/skills/python.svg", color: "#3776AB", bg: "rgba(55, 118, 171, 0.15)" },
+    { name: "JavaScript", icon: "/skills/js.png", color: "#3178C6", bg: "rgba(49, 120, 198, 0.15)" },
+    { name: "React", icon: "/skills/react.png", color: "#61DAFB", bg: "rgba(97, 218, 251, 0.15)" },
+    { name: "Next.js", icon: "/skills/next.png", color: "#3178C6", bg: "rgba(49, 120, 198, 0.15)" },
+    { name: "Node.js", icon: "/skills/node.png", color: "#68A063", bg: "rgba(104, 160, 99, 0.15)" },
+    { name: "MongoDB", icon: "/skills/mongodb.png", color: "#2F4434", bg: "rgba(47, 68, 52, 0.15)" },
+    { name: "PostgreSQL", icon: "/skills/postgresql.png", color: "#4169E1", bg: "rgba(65, 105, 225, 0.15)" }
   ],
 
   skills: [
     // Languages
     { name: "C++", category: "languages", level: "Primary language for DSA", icon: "Cpp" },
     { name: "Python", category: "languages", level: "Scripting & Backend", icon: "Python" },
-    { name: "Java", category: "languages", level: "OOP & Fundamentals", icon: "Java" },
     { name: "TypeScript", category: "languages", level: "Type-safe Web Apps", icon: "TypeScript" },
     { name: "JavaScript", category: "languages", level: "Modern ES6+", icon: "JavaScript" },
-    { name: "Go (Golang)", category: "languages", level: "Backend Services", icon: "Go" },
     { name: "SQL", category: "languages", level: "Database Queries", icon: "SQL" },
 
     // Frontend
     { name: "React.js", category: "frontend", level: "Components & Hooks", icon: "React" },
     { name: "Next.js", category: "frontend", level: "App Router & SSR", icon: "Next" },
     { name: "Tailwind CSS", category: "frontend", level: "Responsive Styling", icon: "Tailwind" },
-    { name: "HTML & CSS", category: "frontend", level: "Clean page structure", icon: "HTML" },
-    { name: "Redux / Zustand", category: "frontend", level: "State Management", icon: "State" },
+    { name: "HTML", category: "frontend", level: "Clean page structure", icon: "HTML" },
+    { name: "CSS", category: "frontend", level: "Clean page structure", icon: "CSS" },
+    { name: "Redux", category: "frontend", level: "State Management", icon: "State" },
+    { name: "Zustand", category: "frontend", level: "State Management", icon: "State" },
     { name: "WebSockets", category: "frontend", level: "Real-time updates", icon: "Realtime" },
 
     // Backend
@@ -137,7 +150,6 @@ export const portfolioData = {
     // Databases & Core CS
     { name: "PostgreSQL", category: "core_cs", level: "Relational tables & keys", icon: "Postgres" },
     { name: "MongoDB", category: "core_cs", level: "NoSQL document storage", icon: "Mongo" },
-    { name: "Redis", category: "core_cs", level: "In-memory caching", icon: "Redis" },
     { name: "Data Structures", category: "core_cs", level: "Arrays, Trees, Graphs, DP", icon: "System" },
     { name: "Object Oriented Design", category: "core_cs", level: "Clean code & classes", icon: "OOP" }
   ] as SkillItem[],
@@ -341,5 +353,62 @@ export const portfolioData = {
       profileUrl: "https://codeforces.com",
       accentColor: "#ef4444"
     }
-  ] as CodingProfile[]
+  ] as CodingProfile[],
+
+  certificates: [
+    {
+      id: "cert-1",
+      title: "AWS Certified Solutions Architect – Associate",
+      issuer: "Amazon Web Services (AWS)",
+      issuerBadge: "AWS",
+      image: "/certificates/cert-1.jpg",
+      credentialUrl: "https://aws.amazon.com/certification/",
+      accentColor: "#FF9900"
+    },
+    {
+      id: "cert-2",
+      title: "Meta Front-End Developer Professional Certificate",
+      issuer: "Meta",
+      issuerBadge: "META",
+      image: "/certificates/cert-2.jpg",
+      credentialUrl: "https://www.coursera.org",
+      accentColor: "#0081FB"
+    },
+    {
+      id: "cert-3",
+      title: "Deep Learning Specialization",
+      issuer: "DeepLearning.AI & Stanford Online",
+      issuerBadge: "AI",
+      image: "/certificates/cert-3.jpg",
+      credentialUrl: "https://deeplearning.ai",
+      accentColor: "#C084FC"
+    },
+    {
+      id: "cert-4",
+      title: "Data Structures & Algorithms in C++",
+      issuer: "Coding Ninjas",
+      issuerBadge: "DSA",
+      image: "/certificates/cert-4.jpg",
+      credentialUrl: "https://codingninjas.com",
+      accentColor: "#10B981"
+    },
+    {
+      id: "cert-5",
+      title: "Docker & Container Orchestration",
+      issuer: "Cloud Native Computing Foundation",
+      issuerBadge: "DOCKER",
+      image: "/certificates/cert-5.jpg",
+      credentialUrl: "https://docker.com",
+      accentColor: "#2496ED"
+    },
+    {
+      id: "cert-6",
+      title: "PostgreSQL & Relational Database Design",
+      issuer: "University of Michigan",
+      issuerBadge: "SQL",
+      image: "/certificates/cert-6.jpg",
+      credentialUrl: "https://coursera.org",
+      accentColor: "#A855F7"
+    }
+  ] as Certificate[]
 };

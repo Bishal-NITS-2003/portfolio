@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import CertificationsSection from "@/components/CertificationsSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import CodingStatsSection from "@/components/CodingStatsSection";
 import ContactSection from "@/components/ContactSection";
@@ -34,6 +35,9 @@ export default function Home() {
 
       {/* Featured Projects with Animated GIF Previews */}
       <ProjectsSection />
+
+      {/* Verified Licenses & Certifications (Solitaire Card Deck Gallery) */}
+      <CertificationsSection />
 
       {/* Experience, Internships & Leadership Timeline */}
       <ExperienceSection />
